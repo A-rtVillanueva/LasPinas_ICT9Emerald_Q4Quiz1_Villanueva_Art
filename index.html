@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>VILLANUEVA | 9E
+</title> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> 
+<style>
+    body{font-family:sans-serif; font-weight: 10px; color: rgb(0, 0, 0); background-image: url(nat.jpg);}
+    button:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);}
+    .container{background-color: rgb(127, 154, 205); margin-top: 90px; border-style: solid; border-width: 9px;}
+    .res{background-color: rgb(164, 164, 214); margin-left: 0px; margin-right: 0px; text-align: center;}
+</style>
+</head> 
+<body> 
+    <h1 style="text-align: center; font-size: 90px; font-style: italic; text-shadow: 8px 8px #767676  ;">BMI Calculator</h1>
+<div class="container"> 
+    <br>
+<details ontoggle="message()"> 
+<summary> Instructions: </summmary> 
+<i> Input your weight and height to calculate your BMI.</i> 
+</details> 
+<br>
+<form>
+
+<input type="number" id="weight" placeholder=" Weight in kilograms ">
+<br><br>
+
+<input type="number" id="height" placeholder=" Height in meters ">
+
+<br><br>
+<button type="button" onclick = "bmi()" class="btn btn-danger">Calculate BMI</button><br><br>
+<div class="res"><h1 id="Result"> Result is here </h1>
+<p id="show_here"></p></div>
+</form>
+<br><br>
+</div>
+
+<script>
+function message(){
+    alert("Hah! You clicked this, now you're reading it then have to close it to continue on this page!");
+}
+
+function bmi() {
+    var weight = document.getElementById ("weight").value
+    var height = document.getElementById ("height").value;
+    var bmi = Number(weight) / Number(height ** 2);
+    document.getElementById('Result').innerHTML = 'The answer is... ' + bmi + '!';
+
+if (bmi < 18.5 ){document.getElementById("show_here").innerHTML = "Underweight. Eat more.";}
+      else if (bmi >= 18.5 && bmi <= 24.9){document.getElementById("show_here").innerHTML = "Normal Weight, good job!";}   
+      else if (bmi >= 25 && bmi <= 29.9){document.getElementById("show_here").innerHTML = "Overweight. Eat less.";}  
+      else if (bmi >= 30){document.getElementById("show_here").innerHTML = "OBESE!! LOSE THAT FAT, BIG BOI!!!!";}
+}
+</script>
+
+
+</body>
+</html>
